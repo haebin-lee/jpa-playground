@@ -16,4 +16,13 @@ public class MemberService {
     public List<Member> getMemberList(){
         return memberRepository.findAll();
     }
+
+    public String addMember(String userName, Integer age) {
+        Member member = Member.builder()
+                .userName(userName)
+                .age(age)
+                .build();
+        memberRepository.save(member);
+        return member.getId();
+    }
 }

@@ -1,4 +1,4 @@
-package com.playground.shopping.member.model.request;
+package com.playground.shopping.member.model.response;
 
 import lombok.AllArgsConstructor;
 

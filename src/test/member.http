@@ -1,0 +1,15 @@
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "userName" : "이다인4",
+  "age" : 29
+}
+
+### POST /board
+POST http://localhost:8080/board
+Content-Type: application/json
+
+{
+  "data": "234234"
+}
