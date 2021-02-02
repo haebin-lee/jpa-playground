@@ -1,6 +1,6 @@
-package com.playground.shopping.member.entity;
+package com.playground.jpa.member.entity;
 
-import com.playground.shopping.member.model.RoleType;
+import com.playground.jpa.member.model.RoleType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

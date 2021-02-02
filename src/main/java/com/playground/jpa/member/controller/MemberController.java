@@ -1,7 +1,7 @@
-package com.playground.shopping.member.controller;
+package com.playground.jpa.member.controller;
 
-import com.playground.shopping.member.model.request.MemberRequest;
-import com.playground.shopping.member.service.MemberService;
+import com.playground.jpa.member.model.request.MemberRequest;
+import com.playground.jpa.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

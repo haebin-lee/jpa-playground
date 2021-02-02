@@ -1,4 +1,4 @@
-package com.playground.shopping.member.entity;
+package com.playground.jpa.member.entity;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,4 @@
-package com.playground.shopping.member.model.response;
-
-import lombok.AllArgsConstructor;
+package com.playground.jpa.member.model.response;
 
 public class MemberResponse {
 

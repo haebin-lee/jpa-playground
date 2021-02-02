@@ -1,7 +1,7 @@
-package com.playground.shopping.member.service;
+package com.playground.jpa.member.service;
 
-import com.playground.shopping.member.entity.Board;
-import com.playground.shopping.member.entity.BoardRepository;
+import com.playground.jpa.member.entity.Board;
+import com.playground.jpa.member.entity.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
