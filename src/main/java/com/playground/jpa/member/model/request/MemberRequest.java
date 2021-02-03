@@ -16,4 +16,7 @@ public class MemberRequest {
     @NotNull
     private Integer age;
 
+    @NotBlank
+    private String teamName;
+
 }

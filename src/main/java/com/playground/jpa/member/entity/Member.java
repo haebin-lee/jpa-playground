@@ -4,11 +4,13 @@ import com.playground.jpa.member.model.RoleType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "MEMBER", uniqueConstraints = {@UniqueConstraint(
@@ -19,7 +21,7 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name = "NAME", nullable = false, length = 10)
     private String userName;
@@ -38,9 +40,14 @@ public class Member {
     @Lob
     private String description;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
     @Builder
-    public Member(String userName, Integer age) {
+    public Member(String userName, Integer age, Team team) {
         this.userName = userName;
         this.age = age;
+        this.team = team;
     }
 }

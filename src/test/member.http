@@ -3,8 +3,12 @@ Content-Type: application/json
 
 {
   "userName" : "이다인4",
-  "age" : 29
+  "age" : 29,
+  "teamName" : "무한상사"
 }
+
+### GET /member
+GET http://localhost:8080/member/1
 
 ### POST /board
 POST http://localhost:8080/board
