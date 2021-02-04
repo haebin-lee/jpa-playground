@@ -50,4 +50,10 @@ public class Member {
         this.age = age;
         this.team = team;
     }
+
+    public void updateUserNameAndTeamName(String userName, String teamName) {
+        this.userName = userName;
+        this.setTeam(new Team(teamName));
+    }
+
 }

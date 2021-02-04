@@ -22,4 +22,16 @@ public class MemberController {
         return memberService.addMember(memberRequest);
     }
 
+    @PutMapping("/member/{memberId}")
+    public void updateMember(
+            @PathVariable Long memberId,
+            @RequestBody MemberRequest.UpdateMember updateMember) {
+        memberService.updateMemberTeam(memberId, updateMember.getUserName(), updateMember.getTeamName());
+    }
+
+    @DeleteMapping("/member/{memberId}/team")
+    public void deleteTeamFromUser(
+            @PathVariable Long memberId) {
+        memberService.deleteTeamFromMember(memberId);
+    }
 }

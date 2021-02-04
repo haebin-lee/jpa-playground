@@ -19,4 +19,11 @@ public class MemberRequest {
     @NotBlank
     private String teamName;
 
+    @Getter
+    public static class UpdateMember {
+        @NotBlank
+        private String userName;
+        @NotBlank
+        private String teamName;
+    }
 }
