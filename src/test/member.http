@@ -2,13 +2,31 @@ POST http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "userName" : "이다인4",
+  "userName" : "lucy",
   "age" : 29,
   "teamName" : "무한상사"
 }
 
 ### GET /member
-GET http://localhost:8080/member/1
+GET http://localhost:8080/member/2
+
+### PUT /member
+PUT http://localhost:8080/member/1
+Content-Type: application/json
+
+{
+  "userName": "lucy",
+  "teamName": "엔카상사"
+}
+
+
+### DELETE /member/{memberId}/team
+DELETE http://localhost:8080/member/1/team
+
+
+### GET /team/{teamId}/members
+GET http://localhost:8080/team/1/members
+
 
 ### POST /board
 POST http://localhost:8080/board
@@ -17,3 +35,4 @@ Content-Type: application/json
 {
   "data": "234234"
 }
+
