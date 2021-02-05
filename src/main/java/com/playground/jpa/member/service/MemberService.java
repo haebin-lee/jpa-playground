@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,9 +45,16 @@ public class MemberService {
     @Transactional
     public void updateMemberTeam(Long memberId, String userName, String teamName) {
         Optional<Member> memberOptional = memberRepository.findById(memberId);
+        Team team = new Team(teamName);
+        teamRepository.save(team);
+
         memberOptional.ifPresent(member -> {
-           member.updateUserNameAndTeamName(userName, teamName);
+            member.setTeam(team);
+            //member.updateUserNameAndTeamName(userName, teamName);
         });
+
+        team.getMemberList().forEach(m -> System.out.println(m.getUserName()));
+
     }
 
     @Transactional

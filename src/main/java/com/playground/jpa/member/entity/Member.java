@@ -51,6 +51,14 @@ public class Member {
         this.team = team;
     }
 
+    public void setTeam(Team team) {
+        if (this.team != null) {
+            this.team.getMemberList().remove(this);
+        }
+        this.team = team;
+        team.getMemberList().add(this);
+    }
+
     public void updateUserNameAndTeamName(String userName, String teamName) {
         this.userName = userName;
         this.setTeam(new Team(teamName));
