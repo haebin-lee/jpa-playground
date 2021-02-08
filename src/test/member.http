@@ -36,3 +36,14 @@ Content-Type: application/json
   "data": "234234"
 }
 
+### POST /member/{memberId}/products
+POST http://localhost:8080/member/1/products
+Content-Type: application/json
+
+{
+  "name" : "상품이다아아"
+}
+
+
+### GET /member/{memberId}/products
+GET http://localhost:8080/member/1/products

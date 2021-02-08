@@ -1,10 +1,8 @@
 package com.playground.jpa.member.service;
 
-import com.playground.jpa.member.entity.Member;
-import com.playground.jpa.member.entity.MemberRepository;
-import com.playground.jpa.member.entity.Team;
-import com.playground.jpa.member.entity.TeamRepository;
+import com.playground.jpa.member.entity.*;
 import com.playground.jpa.member.model.request.MemberRequest;
+import com.playground.jpa.member.model.request.ProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +17,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
     private final TeamRepository teamRepository;
+    private final ProductRepository productRepository;
 
     public List<Member> getMemberList(){
         return memberRepository.findAll();
@@ -62,6 +61,20 @@ public class MemberService {
         Optional<Member> memberOptional = memberRepository.findById(memberId);
         memberOptional.ifPresent(member -> {
             member.setTeam(null);
+        });
+    }
+
+    public List<Product> getProducts(Long memberId) {
+        Optional<Member> optionalMember = memberRepository.findById(memberId);
+        return optionalMember.map(Member::getProducts).orElseGet(null);
+    }
+    @Transactional
+    public void addProducts(Long memberId, ProductRequest productRequest) {
+        Optional<Member> optionalMember = memberRepository.findById(memberId);
+        optionalMember.ifPresent(member -> {
+            Product product = new Product();
+            product.setName(productRequest.getName());
+            member.getProducts().add(product);
         });
     }
 }

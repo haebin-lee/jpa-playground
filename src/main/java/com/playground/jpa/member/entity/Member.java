@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -43,6 +45,16 @@ public class Member {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
+    @ManyToMany(cascade = CascadeType.ALL)// 다대다 : 사용자-상품
+    @JoinTable(name = "MEMBER_PRODUCT",
+            joinColumns = @JoinColumn(name = "MEMBER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
+    private List<Product> products = new ArrayList<>();
 
     @Builder
     public Member(String userName, Integer age, Team team) {
