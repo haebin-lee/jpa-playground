@@ -28,5 +28,11 @@ public abstract class Item {
 
     private String name;
     private int price;
+
+    private String artist;
+    private String director;
+    private String actor;s
+    private String author;
+    private String isbn;
 }
 */
