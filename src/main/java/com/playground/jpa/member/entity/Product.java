@@ -1,13 +1,14 @@
 package com.playground.jpa.member.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 public class Product {
 
@@ -18,7 +19,6 @@ public class Product {
 
     private String name;
 
-    @ManyToMany(mappedBy = "products") // 다대다 역방향
-    private List<Member> members;
-
+//    @ManyToMany(mappedBy = "products") // 다대다 역방향
+//    private List<Member> members;
 }

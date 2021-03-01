@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +17,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final TeamRepository teamRepository;
     private final ProductRepository productRepository;
+    private final OrdersRepository ordersRepository;
 
     public List<Member> getMemberList(){
         return memberRepository.findAll();
@@ -64,17 +64,22 @@ public class MemberService {
         });
     }
 
-    public List<Product> getProducts(Long memberId) {
-        Optional<Member> optionalMember = memberRepository.findById(memberId);
-        return optionalMember.map(Member::getProducts).orElseGet(null);
+    public Orders getOrders(Long memberId, Long productId) {
+        return ordersRepository.findByMemberIdAndMemberId(memberId, productId);
     }
-    @Transactional
+
     public void addProducts(Long memberId, ProductRequest productRequest) {
         Optional<Member> optionalMember = memberRepository.findById(memberId);
-        optionalMember.ifPresent(member -> {
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+
+            // 상품 저장
             Product product = new Product();
             product.setName(productRequest.getName());
-            member.getProducts().add(product);
-        });
+            productRepository.save(product);
+
+            Orders orders = new Orders(member, product);
+            ordersRepository.save(orders);
+        }
     }
 }

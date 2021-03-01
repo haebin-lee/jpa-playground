@@ -21,8 +21,8 @@ import java.util.List;
 )})
 public class Member {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MEMBER_ID")
     private Long id;
 
     @Column(name = "NAME", nullable = false, length = 10)
@@ -50,11 +50,17 @@ public class Member {
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
-    @ManyToMany(cascade = CascadeType.ALL)// 다대다 : 사용자-상품
-    @JoinTable(name = "MEMBER_PRODUCT",
-            joinColumns = @JoinColumn(name = "MEMBER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
-    private List<Product> products = new ArrayList<>();
+//    @ManyToMany(cascade = CascadeType.ALL)// 다대다 : 사용자-상품
+//    @JoinTable(name = "MEMBER_PRODUCT",
+//            joinColumns = @JoinColumn(name = "MEMBER_ID"),
+//            inverseJoinColumns = @JoinColumn(name = "PRODUCT_ID"))
+//    private List<Product> products = new ArrayList<>();
+
+//    @OneToMany(mappedBy = "member")
+//    private List<MemberProduct> memberProducts;
+
+    @OneToMany(mappedBy = "member")
+    private List<Orders> orders = new ArrayList<>();
 
     @Builder
     public Member(String userName, Integer age, Team team) {
