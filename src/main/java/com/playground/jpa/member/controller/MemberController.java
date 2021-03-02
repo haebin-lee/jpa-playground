@@ -18,7 +18,12 @@ public class MemberController {
 
     @GetMapping("/member/{memberId}")
     public ResponseEntity<Member> getMember(@PathVariable Long memberId) {
-        return ResponseEntity.ok(memberService.getMember(memberId));
+        Member member = memberService.getMember(memberId);
+        System.out.println("member : " + member);
+
+        return ResponseEntity.ok(member);
+//        memberService.getMember(memberId);
+//        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/member")

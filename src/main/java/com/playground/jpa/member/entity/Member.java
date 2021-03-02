@@ -1,5 +1,6 @@
 package com.playground.jpa.member.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.playground.jpa.member.model.RoleType;
 import lombok.Builder;
 import lombok.Getter;
@@ -42,7 +43,10 @@ public class Member {
     @Lob
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    // 조인컬럼의 nullable=true 와 false에 따라 조인 정책이 달라진다.
+    // nullable=true(default)의 경우에는 조인값이 없을 수도 있으므로 외부조인을
+    // nullable=false의 경우에는 반드시 조인 값이 있으므로 내부조인을 사용한다.
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -59,7 +63,8 @@ public class Member {
 //    @OneToMany(mappedBy = "member")
 //    private List<MemberProduct> memberProducts;
 
-    @OneToMany(mappedBy = "member")
+    @JsonIgnore
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     private List<Orders> orders = new ArrayList<>();
 
     @Builder

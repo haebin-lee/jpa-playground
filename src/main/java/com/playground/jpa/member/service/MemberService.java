@@ -25,6 +25,12 @@ public class MemberService {
 
     public Member getMember(Long memberId) {
         Optional<Member> memberOptional = memberRepository.findById(memberId);
+//        memberOptional.ifPresent(member -> {
+//            System.out.println("userName : " + member.getUserName());
+//            // fetch = FetchType.LAZY 로 설정했을 때 아래 쿼리를 호출했을 때 비로소 데이터를 조회한다.
+//            System.out.println("teamName : " + member.getTeam().getName());
+//        });
+
         return memberOptional.orElse(null);
     }
 
