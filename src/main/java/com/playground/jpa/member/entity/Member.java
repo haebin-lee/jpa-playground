@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Getter
 @Setter
@@ -29,6 +27,8 @@ public class Member {
     @Column(name = "NAME", nullable = false, length = 10)
     private String userName;
 
+    private Integer age;
+
     @Embedded
     Period workPeriod;
 
@@ -39,7 +39,6 @@ public class Member {
     @AttributeOverrides({
             @AttributeOverride(name = "city", column = @Column(name = "COMPANY_CITY"))
             , @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STREET"))
-            , @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STATE"))
             , @AttributeOverride(name = "zipcode", column = @Column(name = "COMPANY_ZIPCODE"))
     })
     Address companyAddress;
@@ -47,7 +46,16 @@ public class Member {
     @Embedded
     PhoneNumber phoneNumber;
 
-    private Integer age;
+    // 값으로 사용하는 컬럼이 1개일 때 @Column 사용
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "FAVORITE_FOODS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    @Column(name = "FOOD_NAME")
+    private Set<String> favoriteFoods = new HashSet<>();
+
+    // 컬렉션의 경우
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(name = "ADDRESS_HISTORY", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+    private List<Address> addressHistory = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private RoleType roleType;
