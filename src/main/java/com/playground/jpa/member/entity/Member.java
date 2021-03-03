@@ -29,6 +29,24 @@ public class Member {
     @Column(name = "NAME", nullable = false, length = 10)
     private String userName;
 
+    @Embedded
+    Period workPeriod;
+
+    @Embedded
+    Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "COMPANY_CITY"))
+            , @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STREET"))
+            , @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STATE"))
+            , @AttributeOverride(name = "zipcode", column = @Column(name = "COMPANY_ZIPCODE"))
+    })
+    Address companyAddress;
+
+    @Embedded
+    PhoneNumber phoneNumber;
+
     private Integer age;
 
     @Enumerated(EnumType.STRING)
