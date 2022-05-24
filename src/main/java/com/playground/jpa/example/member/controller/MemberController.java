@@ -1,10 +1,11 @@
-package com.playground.jpa.member.controller;
+package com.playground.jpa.example.member.controller;
 
-import com.playground.jpa.member.entity.Member;
-import com.playground.jpa.member.entity.Orders;
-import com.playground.jpa.member.model.request.MemberRequest;
-import com.playground.jpa.member.model.request.ProductRequest;
-import com.playground.jpa.member.service.MemberService;
+
+import com.playground.jpa.example.member.entity.Member;
+import com.playground.jpa.example.member.entity.Orders;
+import com.playground.jpa.example.member.model.request.MemberRequest;
+import com.playground.jpa.example.member.model.request.ProductRequest;
+import com.playground.jpa.example.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

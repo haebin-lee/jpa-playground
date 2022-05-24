@@ -1,4 +1,4 @@
-package com.playground.jpa.member.model.response;
+package com.playground.jpa.example.member.model.response;
 
 public class MemberResponse {
 

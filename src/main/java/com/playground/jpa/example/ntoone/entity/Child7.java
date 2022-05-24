@@ -1,4 +1,4 @@
-package com.playground.jpa.ntoone.entity;
+package com.playground.jpa.example.ntoone.entity;
 
 import javax.persistence.*;
 

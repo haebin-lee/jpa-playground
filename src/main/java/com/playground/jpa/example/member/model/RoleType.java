@@ -1,4 +1,4 @@
-package com.playground.jpa.member.model;
+package com.playground.jpa.example.member.model;
 
 public enum RoleType {
     ADMIN, USER

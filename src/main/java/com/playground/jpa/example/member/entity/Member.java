@@ -1,7 +1,7 @@
-package com.playground.jpa.member.entity;
+package com.playground.jpa.example.member.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.playground.jpa.member.model.RoleType;
+import com.playground.jpa.example.member.model.RoleType;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

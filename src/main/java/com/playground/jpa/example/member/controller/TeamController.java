@@ -1,8 +1,7 @@
-package com.playground.jpa.member.controller;
+package com.playground.jpa.example.member.controller;
 
-import com.playground.jpa.member.entity.Member;
-import com.playground.jpa.member.entity.TeamRepository;
-import com.playground.jpa.member.service.TeamService;
+import com.playground.jpa.example.member.entity.Member;
+import com.playground.jpa.example.member.service.TeamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

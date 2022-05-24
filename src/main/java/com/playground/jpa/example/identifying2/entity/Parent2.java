@@ -1,4 +1,4 @@
-package com.playground.jpa.identifying2.entity;
+package com.playground.jpa.example.identifying2.entity;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

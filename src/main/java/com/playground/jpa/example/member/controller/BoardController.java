@@ -1,6 +1,7 @@
-package com.playground.jpa.member.controller;
+package com.playground.jpa.example.member.controller;
 
-import com.playground.jpa.member.service.BoardService;
+
+import com.playground.jpa.example.member.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

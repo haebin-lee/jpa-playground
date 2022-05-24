@@ -1,8 +1,9 @@
-package com.playground.jpa.member.service;
+package com.playground.jpa.example.member.service;
 
-import com.playground.jpa.member.entity.*;
-import com.playground.jpa.member.model.request.MemberRequest;
-import com.playground.jpa.member.model.request.ProductRequest;
+
+import com.playground.jpa.example.member.entity.*;
+import com.playground.jpa.example.member.model.request.MemberRequest;
+import com.playground.jpa.example.member.model.request.ProductRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.playground.jpa.inheritance2.entity;
+package com.playground.jpa.example.inheritance2.entity;
 
 import javax.persistence.*;
 /*

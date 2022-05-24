@@ -1,4 +1,4 @@
-package com.playground.jpa.nton.entity;
+package com.playground.jpa.example.nton.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;

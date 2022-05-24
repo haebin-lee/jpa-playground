@@ -1,4 +1,4 @@
-package com.playground.jpa.oneton.entity;
+package com.playground.jpa.example.oneton.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;

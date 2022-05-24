@@ -1,6 +1,4 @@
-package com.playground.jpa.onetoeone.entity;
-
-import com.playground.jpa.nonidentifying.entity.Child3;
+package com.playground.jpa.example.onetoeone.entity;
 
 import javax.persistence.*;
 

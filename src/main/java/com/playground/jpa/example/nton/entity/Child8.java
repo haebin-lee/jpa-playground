@@ -1,4 +1,4 @@
-package com.playground.jpa.nton.entity;
+package com.playground.jpa.example.nton.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

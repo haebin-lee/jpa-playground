@@ -1,4 +1,4 @@
-package com.playground.jpa.inheritance.entity;
+package com.playground.jpa.example.inheritance.entity;
 
 import lombok.Getter;
 

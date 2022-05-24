@@ -1,4 +1,4 @@
-package com.playground.jpa.member.entity;
+package com.playground.jpa.example.member.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

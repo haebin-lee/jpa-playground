@@ -1,8 +1,8 @@
-package com.playground.jpa.member.service;
+package com.playground.jpa.example.member.service;
 
-import com.playground.jpa.member.entity.Member;
-import com.playground.jpa.member.entity.Team;
-import com.playground.jpa.member.entity.TeamRepository;
+import com.playground.jpa.example.member.entity.Member;
+import com.playground.jpa.example.member.entity.Team;
+import com.playground.jpa.example.member.entity.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

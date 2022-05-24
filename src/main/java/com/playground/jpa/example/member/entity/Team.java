@@ -1,4 +1,4 @@
-package com.playground.jpa.member.entity;
+package com.playground.jpa.example.member.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.playground.jpa.onetoeone.entity;
+package com.playground.jpa.example.onetoeone.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

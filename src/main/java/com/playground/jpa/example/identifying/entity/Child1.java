@@ -1,4 +1,4 @@
-package com.playground.jpa.identifying.entity;
+package com.playground.jpa.example.identifying.entity;
 
 import javax.persistence.*;
 
